@@ -7,9 +7,9 @@ from harmonic_functions import *
 # Import historical data
 
 # data = pd.read_csv('Data/JP225_D1.csv')
-# data = pd.read_csv('Data/JP225_H1.csv')
+data = pd.read_csv('Data/JP225_H1.csv')
 # data = pd.read_csv('Data/USDJPY_D1.csv')
-data = pd.read_csv('Data/USDJPY_H1.csv')
+# data = pd.read_csv('Data/USDJPY_H1.csv')
 
 # data.columns = [['LocalTime', 'open', 'high', 'low', 'close', 'vol']]
 data.columns = [c.strip().lower().replace(' ','_') for c in data.columns]
@@ -22,7 +22,7 @@ data = data[['open','high','low','close','volume']]
 
 data = data.drop_duplicates(keep=False)
 
-price = data.close.iloc[:500]
+price = data.close.iloc[:9000]
 
 
 # Fubd our relative extrema
@@ -36,7 +36,7 @@ price = data.close.iloc[:500]
 
 # Find Peaks
 
-err_allowed = 4.9/100
+err_allowed = 4.8/100
 
 for i in range(100, len(price)): 
 	
