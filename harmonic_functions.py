@@ -58,7 +58,7 @@ def is_gartley(moves,err_allowed):
 			print('Bearish '+pattern_name+' Pattern not found')
 			return np.NAN
 	
-	else:
+	#else:
 		return np.NAN
 
 def is_butterfly(moves,err_allowed):

@@ -87,7 +87,7 @@ for i in range(100, len(price)):
 				label = sense + labels[j] + ' Found'
 
 				plt.title(label)
-				plt.plot(np.arrange(start,i+15), price.values[start:i+15])
+				plt.plot(np.arange(start,i+15), price.values[start:i+15])
 				plt.plot(current_idx,current_pat,c='r')
 				plt.show()
 				
