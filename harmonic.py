@@ -10,14 +10,13 @@ data = pd.read_csv('Data/JP225.csv')
 # data.columns = [['LocalTime', 'open', 'high', 'low', 'close', 'vol']]
 data.columns = [c.strip().lower().replace(' ','_') for c in data.columns]
 
-data = data.drop_duplicates(keep=False)
-
 # data.Date = pd.to_datetime(data.Date, format='%d.%m.%Y %H:%M:%S.%f')
 
 data = data.set_index(data.local_time)
 
 data = data[['open','high','low','close','volume']]
 
+data = data.drop_duplicates(keep=False)
 
 price = data.close.iloc[:100]
 
