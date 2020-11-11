@@ -45,8 +45,9 @@ for i in range(100, len(price)):
 	# max_idx = list(argrelextrema(price.values, np.greater, order=1)[0])
 	# min_idx = list(argrelextrema(price.values, np.less, order=1)[0])
 
-	max_idx = list(argrelextrema(price.values[:i], np.greater, order=5)[0])
-	min_idx = list(argrelextrema(price.values[:i], np.less, order=5)[0])
+	n=5 # number of points to be checked before and after 
+	max_idx = list(argrelextrema(price.values[:i], np.greater, order=n)[0])
+	min_idx = list(argrelextrema(price.values[:i], np.less, order=n)[0])
 
 	idx = max_idx + min_idx + [len(price.values[:i])-i]
 
