@@ -36,7 +36,7 @@ price = data.close.iloc[:9000]
 
 # Find Peaks
 
-err_allowed = 4.8/100
+err_allowed = 4.0/100
 
 for i in range(100, len(price)): 
 	

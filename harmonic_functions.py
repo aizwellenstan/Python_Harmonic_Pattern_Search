@@ -6,13 +6,15 @@ def peak_detect(price,order=5):
 
 	max_idx = list(argrelextrema(price, np.greater, order=order)[0])
 	min_idx = list(argrelextrema(price, np.less, order=order)[0])
-
+	
 	idx = max_idx + min_idx + [len(price)-1]
 
 	idx.sort()
 	
 	current_idx = idx[-5:]
 
+	print(current_idx)
+	
 	start = min(current_idx)
 	end = max(current_idx)
 
@@ -41,9 +43,10 @@ def is_gartley(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bullish '+pattern_name+' Pattern found')
 			return 1
 		else:
-			print('Bullish '+pattern_name+' Pattern not found')
+			# print('Bullish '+pattern_name+' Pattern not found')
 			return np.NAN
 	### Bearish
 	elif XA<0 and AB>0 and BC<0 and CD>0:
@@ -52,10 +55,11 @@ def is_gartley(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bearish '+pattern_name+' Pattern found')
 			return -1
 
 		else:
-			print('Bearish '+pattern_name+' Pattern not found')
+			# print('Bearish '+pattern_name+' Pattern not found')
 			return np.NAN
 	
 	#else:
@@ -82,9 +86,10 @@ def is_butterfly(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bullish '+pattern_name+ ' Pattern found')
 			return 1
 		else:
-			print('Bullish '+pattern_name+ ' Pattern not found')
+			# print('Bullish '+pattern_name+ ' Pattern not found')
 			return np.NAN
 	### Bearish
 	elif XA<0 and AB>0 and BC<0 and CD>0:
@@ -93,10 +98,11 @@ def is_butterfly(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bearish '+pattern_name +' Pattern found')
 			return -1
 
 		else:
-			print('Bearish '+pattern_name +' Pattern not found')
+			# print('Bearish '+pattern_name +' Pattern not found')
 			return np.NAN
 	
 	else:
@@ -123,9 +129,10 @@ def is_bat(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			# print('Bullish '+pattern_name+ ' Pattern found')
 			return 1
 		else:
-			print('Bullish '+pattern_name+ ' Pattern not found')
+			# print('Bullish '+pattern_name+ ' Pattern not found')
 			return np.NAN
 	### Bearish
 	elif XA<0 and AB>0 and BC<0 and CD>0:
@@ -134,10 +141,11 @@ def is_bat(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bearish '+pattern_name +' Pattern found')
 			return -1
 
 		else:
-			print('Bearish '+pattern_name +' Pattern not found')
+			# print('Bearish '+pattern_name +' Pattern not found')
 			return np.NAN
 	
 	else:
@@ -164,9 +172,10 @@ def is_crab(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bullish '+pattern_name+ ' Pattern found')
 			return 1
 		else:
-			print('Bullish '+pattern_name+ ' Pattern not found')
+			# print('Bullish '+pattern_name+ ' Pattern not found')
 			return np.NAN
 	### Bearish
 	elif XA<0 and AB>0 and BC<0 and CD>0:
@@ -175,10 +184,11 @@ def is_crab(moves,err_allowed):
 			and BC_range[0]<abs(BC)<BC_range[1] 
 			and CD_range[0]<abs(CD)<CD_range[1]):
 			
+			print('Bearish '+pattern_name +' Pattern found')
 			return -1
 
 		else:
-			print('Bearish '+pattern_name +' Pattern not found')
+			# print('Bearish '+pattern_name +' Pattern not found')
 			return np.NAN
 	
 	else:
